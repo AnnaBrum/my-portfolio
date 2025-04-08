@@ -1,12 +1,16 @@
-import { getProjects } from "../../sanity/sanity-utils.js";
+import { getProjects } from "../../sanity/queries.js";
 
 export default async function Home() {
   const projects = await getProjects();
 
-  console.log(projects)
-  return 
-    <div>
-
-    </div>
-  
+  return (
+    <>
+      {projects.map((project) => (
+        <div key={project._id}>
+          <p>{project.title}</p>
+         
+        </div>
+      ))}
+    </>
+  );
 }
