@@ -21,6 +21,7 @@ export async function getProject(slug) {
       "slug": slug.current,
       "image": image.asset->url,
 			description,
+            skill,
     }`,
     { slug } // we need the slug to create dynamic routes
   );
