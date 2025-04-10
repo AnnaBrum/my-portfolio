@@ -35,7 +35,18 @@ export const projectType = defineType({
     defineField({
       name: "link",
       title: "Project Link",
-      type: "url",
+      type: "url", // the url ensures that the input is a valid url-format
+    }),
+    defineField({
+      name: "skills",
+      title: "Skills Used",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "skill" }],
+        },
+      ],
     }),
   ],
 });
